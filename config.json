@@ -1,0 +1,7 @@
+{
+"version":"1906101",
+"virginboot":1,
+"name": "UNAMED_C01N",
+"wifi":["INSECURE_SSID","INSECURE_PASS"],
+"apprepourl":"https://c01nrepo.github.io/apps/"
+}

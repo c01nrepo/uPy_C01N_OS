@@ -1,0 +1,16 @@
+<html><head><title>C01N Config</title><meta name="viewport" content="width=device-width,initial-scale=1"><style> * { font-family: monospace; text-align: center; } </style></head>
+<body><h1>C01N Config</h1><div id='form'></div><button onclick="submit()">Update & Reboot</button></body><script>
+let config = []
+addInput = (id,label,val='') => { document.getElementById('form').innerHTML += `<label>${label}:<br><input id='${id}' value='${val}' type='text'></label><br><br>` }
+submit = () => {
+	if(!confirm("Are you sure?")) return false;
+	let packet = {}
+	for(param of config) packet[param[0]] = document.getElementById(param[0]).value
+	fetch('/?c='+btoa(JSON.stringify(packet)), { method: 'UPDATE' }).then(r => r.json()).then(r => console.log('Success:', JSON.stringify(r)))
+}
+start = (b64data) => {
+	config = JSON.parse(atob(b64data));
+	for(param of config) addInput(param[0],param[1],param[2]);
+}
+start('%s')
+</script></html>

@@ -1,0 +1,10 @@
+{
+	"name":"SG Weather",
+	"desc":"weather forecasts from data.gov.sg",
+	"tags":["utility"],
+	"author":"ragulbalaji",
+	"version":"190412",
+	"pkg":"sgweather",
+	"start":"weather",
+	"pubEpoch": 1555064808
+}
